@@ -1,5 +1,6 @@
 var helicopterIMG, helicopterSprite, packageSprite,packageIMG;
-var packageBody,ground
+var packageBody, ground
+var side1, side2, side3;
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -44,6 +45,10 @@ function setup() {
 
 
 	Engine.run(engine);
+
+	side1 = new side();
+	side2 = new side();
+	side3 = new side();
   
 }
 
@@ -51,6 +56,10 @@ function setup() {
 function draw() {
   rectMode(CENTER);
   background(0);
+
+  side1.display();
+  side2.display();
+  side3.display();
 
   if(keyPressed(DOWN_ARROW)){
 	  package_option;
@@ -68,6 +77,3 @@ function keyPressed() {
     Matter.Body.setStatic(packageBody, false);
   }
 }
-
-
-
